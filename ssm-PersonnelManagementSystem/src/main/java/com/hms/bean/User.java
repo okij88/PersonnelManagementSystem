@@ -7,9 +7,9 @@ import javax.validation.constraints.Pattern;
 public class User {
 	private Integer id;
 
-	@Pattern(regexp = "(^([a-zA-Z0-9_-]{6,16}$))", message = "登录名为6-16位英文和数字的组合")
+	@Pattern(regexp = "(^([a-zA-Z0-9_-]{5,16}$))", message = "登录名为5-16位英文和数字的组合")
 	private String loginname;
-	@Pattern(regexp = "(^([a-zA-Z0-9_-]{6,16}$))", message = "登录名为6-16位英文和数字的组合")
+	@Pattern(regexp = "(^([a-zA-Z0-9_-]{5,16}$))", message = "登录名为5-16位英文和数字的组合")
 	private String password;
 
 	private Integer userstatus;

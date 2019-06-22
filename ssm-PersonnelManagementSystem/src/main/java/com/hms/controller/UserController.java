@@ -64,6 +64,7 @@ public class UserController {
 	@RequestMapping("/user/add")
 	@ResponseBody
 	public Msg saveUser(@RequestBody @Valid User user, BindingResult result) {
+		System.out.println(user.toString());
 		if (result.hasErrors()) {
 			Map<String, Object> map = new HashMap<String, Object>();
 			List<FieldError> errors = result.getFieldErrors();

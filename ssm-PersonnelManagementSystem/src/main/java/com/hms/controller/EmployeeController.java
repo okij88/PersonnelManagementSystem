@@ -34,6 +34,9 @@ public class EmployeeController {
 	public Msg getEmps(@RequestParam(value = "pn", defaultValue = "1") Integer pn) {
 		PageHelper.startPage(pn, 15);
 		List<EmpPart> emps = employeeService.getAll();
+		for(EmpPart emp : emps) {
+			System.out.println(emp.getName());
+		}
 		PageInfo page = new PageInfo(emps, 5);
 		return Msg.success().add("pageInfo", page);
 	}
