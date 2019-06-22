@@ -54,18 +54,32 @@ export default {
       this.upload();
     },
     upload(){
-      if(this.loginForm.username === "123" && this.loginForm.password === "123"){
-        sessionStorage.setItem("userId",1);
-        sessionStorage.setItem("empId",1);
-        sessionStorage.setItem("jobId",8);
-        sessionStorage.setItem("timeId",1);
-        this.$router.push("/NoticeManage");
-      }
-      else{
-        this.$message.error("用户名或密码错误");
-        return;
-      }
+      this.trylogin();
+      // if(this.loginForm.username === "123" && this.loginForm.password === "123"){
+      //   this.$router.push("/NoticeManage");
+      // }
+      // else{
+      //   this.$message.error("用户名或密码错误");
+      //   return;
+      // }
 
+    },
+    trylogin(){
+      let url = resources.login();
+      var user = {
+        loginname:this.loginForm.username,
+        password:this.loginForm.password
+      }
+      this.$ajax.post(url,user)
+      .then(res => {
+        console.log(res.data.extend.result.token)
+        var token = res.data.extend.result.token
+        sessionStorage.setItem("token",token)
+        this.$router.push("/NoticeManage");
+      })
+      .catch(error => {
+        console.log(error);
+      });
     },
     handleOk(e) {
       console.log(e);

@@ -265,6 +265,7 @@ export default{
             // You can use any AJAX library you like
             reqwest({
                 url: resources.uploadDocument(),
+                // url:"http://localhost:8080/ssm-EasyShopping/upload",
                 method: 'post',
                 processData: false,
                 data: formData,

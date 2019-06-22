@@ -10,6 +10,9 @@ if (debug) {
 let resources = {
   schoolId: sessionStorage.getItem("schoolId") || 0,
   host: host,
+  login(){
+    return `${host}\/login`;
+  },
   getUsers() {
     return `${host}\/users\/select`;
   },
