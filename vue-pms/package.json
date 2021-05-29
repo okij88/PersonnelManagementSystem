@@ -20,7 +20,7 @@
     "vue": "^2.5.17",
     "vue-monoplasty-slide-verify": "^1.0.4",
     "vue-router": "^3.0.1",
-    "ws": "^6.1.2"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
